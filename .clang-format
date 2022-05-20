@@ -1,0 +1,4 @@
+# Generated from CLion C/C++ Code Style settings
+BasedOnStyle: LLVM
+SortIncludes: CaseInsensitive
+IncludeBlocks: Regroup
