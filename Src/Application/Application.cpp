@@ -10,11 +10,14 @@ void Application::ApplicationLoop() {
 
   auto accel = Gyro.ReadAcceleration();
   auto gyrodata = Gyro.ReadGyroscope();
+  auto temp = Gyro.ReadTemperature();
 
   std::stringstream ss;
   ss << "X: " << accel.X << ",  Y: " << accel.Y << ", Z: " << accel.Z;
   ss << "\r\n";
   ss << "X: " << gyrodata.X << ",  Y: " << gyrodata.Y << ", Z: " << gyrodata.Z;
+  ss << "\r\n";
+  ss << "T: " << temp;
   ApplicationLogger.Log(ss.str());
 
   Delay(100);

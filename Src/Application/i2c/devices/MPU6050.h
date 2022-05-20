@@ -14,6 +14,8 @@ static const double AccelConversionFactor = 16384.0;
 static const int GyroReadRegister = 0x43;
 static const int GyroReadLength = 6;
 static const double GyroConversionFactor = 131.0;
+static const int TempReadRegister = 0x41;
+static const int TempReadLength = 2;
 
 #include "../I2CDevice.h"
 class MPU6050 : public I2CDevice {
@@ -28,6 +30,7 @@ public:
   void Initialize();
   axes ReadAcceleration();
   axes ReadGyroscope();
+  double ReadTemperature();
 };
 
 #endif // HELLONUCLEO_SRC_APPLICATION_I2C_DEVICES_MPU6050_H

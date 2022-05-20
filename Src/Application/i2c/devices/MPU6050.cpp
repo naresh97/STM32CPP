@@ -29,3 +29,7 @@ MPU6050::axes MPU6050::ReadGyroscope() {
 
   return m;
 }
+double MPU6050::ReadTemperature() {
+  auto tempData = I2CDevice::Read(TempReadRegister, TempReadLength);
+  return (int16_t)(tempData[0] << 8 | tempData[1]) / 340.0 + 36.53;
+}
