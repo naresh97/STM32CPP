@@ -19,7 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-#include "Application/application.h"
+#include "Application/Application.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -94,15 +94,15 @@ int main(void) {
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  application mainApplication(huart2, hi2c1);
-  mainApplication.applicationSetup();
+  Application mainApplication(huart2, hi2c1);
+  mainApplication.ApplicationSetup();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1) {
     /* USER CODE END WHILE */
-    mainApplication.applicationLoop();
+    mainApplication.ApplicationLoop();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
