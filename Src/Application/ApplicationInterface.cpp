@@ -4,9 +4,7 @@
 
 #include "ApplicationInterface.h"
 
-ApplicationInterface::ApplicationInterface(UART_HandleTypeDef uartHandle,
-                                           I2C_HandleTypeDef i2CHandle)
-    : ApplicationLogger(uartHandle), UartHandle(uartHandle),
-      I2CHandle(i2CHandle) {}
+ApplicationInterface::ApplicationInterface(UART_HandleTypeDef uartHandle)
+    : ApplicationLogger(uartHandle) {}
 
 void ApplicationInterface::Delay(int milliseconds) { HAL_Delay(milliseconds); }

@@ -4,31 +4,37 @@
 
 #include "Application.h"
 
+#include <algorithm>
+#include <cmath>
+#include <numeric>
 #include <sstream>
 void Application::ApplicationLoop() {
-  ApplicationLogger.Clear();
-
   auto accel = Gyro.ReadAcceleration();
-  auto gyrodata = Gyro.ReadGyroscope();
-  auto temp = Gyro.ReadTemperature();
+  auto [x, y, z] = accel;
+
+  auto rescaler = Math::Rescaler<double>({-1, 1}, {180, 0});
+
+  auto angle = rescaler(y);
+
+  angleBuffer.pop_front();
+  angleBuffer.push_back(angle);
+  auto avg =
+      std::reduce(angleBuffer.begin(), angleBuffer.end()) / angleBuffer.size();
 
   std::stringstream ss;
-  ss << "X: " << accel.X << ",  Y: " << accel.Y << ", Z: " << accel.Z;
-  ss << "\r\n";
-  ss << "X: " << gyrodata.X << ",  Y: " << gyrodata.Y << ", Z: " << gyrodata.Z;
-  ss << "\r\n";
-  ss << "T: " << temp;
+  ss << "Angle: " << angle;
   ApplicationLogger.Log(ss.str());
 
-  Delay(100);
+  Servo1.GoToAngle(static_cast<int>(angle));
 }
 
 void Application::ApplicationSetup() {}
 
 Application::Application(UART_HandleTypeDef uartHandle,
-                         I2C_HandleTypeDef i2CHandle)
-    : ApplicationInterface(uartHandle, i2CHandle),
-      Gyro(i2CHandle, (0x68 << 1)) {
+                         I2C_HandleTypeDef i2CHandle,
+                         TIM_HandleTypeDef timerHandle)
+    : ApplicationInterface(uartHandle), Gyro(i2CHandle, (0x68 << 1)),
+      Servo1(timerHandle, {60, 253}, {0, 180}) {
   ApplicationLogger.Info("Application setup initiated.");
 
   try {
