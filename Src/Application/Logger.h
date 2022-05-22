@@ -22,6 +22,8 @@ public:
   void Info(const std::string &message) { Log(message, "[INFO] "); }
   void Error(const std::string &message) { Log(message, "[ERROR] "); }
 
+  void SendBytes(uint8_t *bytes, const size_t length);
+
   void Clear();
 };
 

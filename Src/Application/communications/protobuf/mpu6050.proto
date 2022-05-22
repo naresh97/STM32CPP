@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message AccelData{
+  double x = 1;
+  double y = 2;
+  double z = 3;
+}
+
+message GyroData{
+  double x = 1;
+  double y = 2;
+  double z = 3;
+}
+
+message Temperature{
+  double T = 1;
+}
