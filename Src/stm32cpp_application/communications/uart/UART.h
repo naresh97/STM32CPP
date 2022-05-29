@@ -36,7 +36,7 @@ public:
   void InitializeReceive();
   void InterruptCallback(UART_HandleTypeDef *handle);
   void ProcessingLoop();
-  EventCallback<std::vector<uint8_t>> GetMessageEventCallback();
+  [[nodiscard]] EventCallback<std::vector<uint8_t>> GetMessageEventCallback();
 };
 
 #endif // STM32CPP_UART_H
