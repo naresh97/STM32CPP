@@ -5,9 +5,8 @@
 #ifndef STM32CPP_IPBAPI_H
 #define STM32CPP_IPBAPI_H
 
-#include "pb_decode.h"
-
 #include <cstdint>
+#include <pb_decode.h>
 #include <vector>
 
 class IPbApi {
