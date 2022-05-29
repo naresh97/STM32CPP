@@ -2,8 +2,8 @@
 // Created by naresh on 19/05/22.
 //
 
-#ifndef HELLONUCLEO_I2CDEVICE_H
-#define HELLONUCLEO_I2CDEVICE_H
+#ifndef STM32CPP_I2CDEVICE_H
+#define STM32CPP_I2CDEVICE_H
 
 extern "C" {
 #include "stm32f4xx_hal.h"
@@ -32,4 +32,4 @@ public:
   virtual std::vector<uint8_t> ScanForDevices();
 };
 
-#endif // HELLONUCLEO_I2CDEVICE_H
+#endif // STM32CP_I2CDEVICE_H

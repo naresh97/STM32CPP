@@ -2,8 +2,8 @@
 // Created by naresh on 21/05/22.
 //
 
-#ifndef HELLONUCLEO_SERVO_H
-#define HELLONUCLEO_SERVO_H
+#ifndef STM32CPP_SERVO_H
+#define STM32CPP_SERVO_H
 
 #include "math/Rescaler.h"
 
@@ -22,4 +22,4 @@ public:
   void GoToAngle(int angle) const;
 };
 
-#endif // HELLONUCLEO_SERVO_H
+#endif // STM32CP_SERVO_H

@@ -2,8 +2,8 @@
 // Created by naresh on 23/05/22.
 //
 
-#ifndef HELLONUCLEO_HD44780_H
-#define HELLONUCLEO_HD44780_H
+#ifndef STM32CPP_HD44780_H
+#define STM32CPP_HD44780_H
 
 static const int Initialize8BitData = 0b00110000;
 static const int Initialize4BitData = 0b00100000;
@@ -45,4 +45,4 @@ public:
   void ClearDisplay();
 };
 
-#endif // HELLONUCLEO_HD44780_H
+#endif // STM32CP_HD44780_H

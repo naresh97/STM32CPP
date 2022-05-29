@@ -2,8 +2,8 @@
 // Created by naresh on 21/05/22.
 //
 
-#ifndef HELLONUCLEO_RESCALER_H
-#define HELLONUCLEO_RESCALER_H
+#ifndef STM32CPP_RESCALER_H
+#define STM32CPP_RESCALER_H
 
 #include <tuple>
 
@@ -34,4 +34,4 @@ template <typename T> double Rescaler<T>::operator()(T value) const {
 
 } // namespace Math
 
-#endif // HELLONUCLEO_RESCALER_H
+#endif // STM32CP_RESCALER_H

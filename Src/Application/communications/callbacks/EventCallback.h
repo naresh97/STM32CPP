@@ -2,8 +2,8 @@
 // Created by naresh on 28/05/22.
 //
 
-#ifndef HELLONUCLEO_EVENTCALLBACK_H
-#define HELLONUCLEO_EVENTCALLBACK_H
+#ifndef STM32CPP_EVENTCALLBACK_H
+#define STM32CPP_EVENTCALLBACK_H
 
 #include <functional>
 #include <memory>
@@ -57,4 +57,4 @@ template <typename T> EventCallback<T>::~EventCallback() {
   }
 }
 
-#endif // HELLONUCLEO_EVENTCALLBACK_H
+#endif // STM32CP_EVENTCALLBACK_H

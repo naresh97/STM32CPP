@@ -2,8 +2,8 @@
 // Created by naresh on 29/05/22.
 //
 
-#ifndef HELLONUCLEO_IPBAPI_H
-#define HELLONUCLEO_IPBAPI_H
+#ifndef STM32CPP_IPBAPI_H
+#define STM32CPP_IPBAPI_H
 
 #include "pb_decode.h"
 
@@ -24,4 +24,4 @@ public:
   };
 };
 
-#endif // HELLONUCLEO_IPBAPI_H
+#endif // STM32CP_IPBAPI_H

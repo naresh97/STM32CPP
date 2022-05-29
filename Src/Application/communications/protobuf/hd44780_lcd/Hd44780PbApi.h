@@ -9,10 +9,10 @@
 
 #include <cstdint>
 #include <vector>
-#ifndef HELLONUCLEO_HD44780_PBAPI_H
-#define HELLONUCLEO_HD44780_PBAPI_H
+#ifndef STM32CPP_HD44780_PBAPI_H
+#define STM32CPP_HD44780_PBAPI_H
 
-#endif // HELLONUCLEO_HD44780_PBAPI_H
+#endif // STM32CP_HD44780_PBAPI_H
 
 class Hd44780PbApi : IPbApi {
 public:

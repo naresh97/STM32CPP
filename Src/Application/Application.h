@@ -2,8 +2,8 @@
 // Created by naresh on 18/05/22.
 //
 
-#ifndef HELLONUCLEO_APPLICATION_H
-#define HELLONUCLEO_APPLICATION_H
+#ifndef STM32CPP_APPLICATION_H
+#define STM32CPP_APPLICATION_H
 
 #include "ApplicationInterface.h"
 #include "communications/UART.h"
@@ -28,4 +28,4 @@ public:
   void ApplicationLoop() override;
 };
 
-#endif // HELLONUCLEO_APPLICATION_H
+#endif // STM32CP_APPLICATION_H

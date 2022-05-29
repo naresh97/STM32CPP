@@ -2,8 +2,8 @@
 // Created by naresh on 18/05/22.
 //
 
-#ifndef HELLONUCLEO_APPLICATIONINTERFACE_H
-#define HELLONUCLEO_APPLICATIONINTERFACE_H
+#ifndef STM32CPP_APPLICATIONINTERFACE_H
+#define STM32CPP_APPLICATIONINTERFACE_H
 
 #include "Logger.h"
 
@@ -21,4 +21,4 @@ public:
   Logger GetLogger() { return ApplicationLogger; }
 };
 
-#endif // HELLONUCLEO_APPLICATIONINTERFACE_H
+#endif // STM32CP_APPLICATIONINTERFACE_H

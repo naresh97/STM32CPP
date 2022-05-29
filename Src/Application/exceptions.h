@@ -2,8 +2,8 @@
 // Created by naresh on 19/05/22.
 //
 
-#ifndef HELLONUCLEO_EXCEPTIONS_H
-#define HELLONUCLEO_EXCEPTIONS_H
+#ifndef STM32CPP_EXCEPTIONS_H
+#define STM32CPP_EXCEPTIONS_H
 
 #include <stdexcept>
 namespace exceptions::i2c {
@@ -22,4 +22,4 @@ public:
 
 } // namespace exceptions::i2c
 
-#endif // HELLONUCLEO_EXCEPTIONS_H
+#endif // STM32CP_EXCEPTIONS_H

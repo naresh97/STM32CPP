@@ -2,8 +2,8 @@
 // Created by naresh on 27/05/22.
 //
 
-#ifndef HELLONUCLEO_UART_H
-#define HELLONUCLEO_UART_H
+#ifndef STM32CPP_UART_H
+#define STM32CPP_UART_H
 
 #include "callbacks/EventCallback.h"
 #include "HAL.h"
@@ -39,4 +39,4 @@ public:
   EventCallback<std::vector<uint8_t>> GetMessageEventCallback();
 };
 
-#endif // HELLONUCLEO_UART_H
+#endif // STM32CP_UART_H

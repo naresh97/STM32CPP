@@ -2,8 +2,8 @@
 // Created by naresh on 18/05/22.
 //
 
-#ifndef HELLONUCLEO_LOGGER_H
-#define HELLONUCLEO_LOGGER_H
+#ifndef STM32CPP_LOGGER_H
+#define STM32CPP_LOGGER_H
 
 #include "HAL.h"
 
@@ -25,4 +25,4 @@ public:
   void Clear();
 };
 
-#endif // HELLONUCLEO_LOGGER_H
+#endif // STM32CP_LOGGER_H
