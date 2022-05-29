@@ -28,4 +28,4 @@ public:
   void ApplicationLoop() override;
 };
 
-#endif // STM32CP_APPLICATION_H
+#endif // STM32CPP_APPLICATION_H

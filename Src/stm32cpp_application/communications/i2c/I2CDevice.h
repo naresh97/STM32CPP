@@ -32,4 +32,4 @@ public:
   virtual std::vector<uint8_t> ScanForDevices();
 };
 
-#endif // STM32CP_I2CDEVICE_H
+#endif // STM32CPP_I2CDEVICE_H

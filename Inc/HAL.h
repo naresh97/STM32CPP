@@ -7,4 +7,4 @@
 extern "C" {
 #include "stm32f4xx_hal.h"
 };
-#endif // STM32CP_HAL_H
+#endif // STM32CPP_HAL_H

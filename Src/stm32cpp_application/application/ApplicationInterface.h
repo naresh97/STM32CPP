@@ -21,4 +21,4 @@ public:
   Logger GetLogger() { return ApplicationLogger; }
 };
 
-#endif // STM32CP_APPLICATIONINTERFACE_H
+#endif // STM32CPP_APPLICATIONINTERFACE_H

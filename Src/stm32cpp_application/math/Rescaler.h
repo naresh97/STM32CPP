@@ -34,4 +34,4 @@ template <typename T> double Rescaler<T>::operator()(T value) const {
 
 } // namespace Math
 
-#endif // STM32CP_RESCALER_H
+#endif // STM32CPP_RESCALER_H

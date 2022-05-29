@@ -33,4 +33,4 @@ public:
   double ReadTemperature();
 };
 
-#endif // STM32CP_SRC_APPLICATION_I2C_DEVICES_MPU6050_H
+#endif // STM32CPP_SRC_APPLICATION_I2C_DEVICES_MPU6050_H

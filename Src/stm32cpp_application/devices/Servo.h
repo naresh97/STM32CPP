@@ -22,4 +22,4 @@ public:
   void GoToAngle(int angle) const;
 };
 
-#endif // STM32CP_SERVO_H
+#endif // STM32CPP_SERVO_H

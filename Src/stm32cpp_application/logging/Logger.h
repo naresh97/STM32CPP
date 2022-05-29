@@ -25,4 +25,4 @@ public:
   void Clear();
 };
 
-#endif // STM32CP_LOGGER_H
+#endif // STM32CPP_LOGGER_H

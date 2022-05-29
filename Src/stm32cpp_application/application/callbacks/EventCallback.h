@@ -57,4 +57,4 @@ template <typename T> EventCallback<T>::~EventCallback() {
   }
 }
 
-#endif // STM32CP_EVENTCALLBACK_H
+#endif // STM32CPP_EVENTCALLBACK_H

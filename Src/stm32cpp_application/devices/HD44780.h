@@ -44,4 +44,4 @@ public:
   void ClearDisplay();
 };
 
-#endif // STM32CP_HD44780_H
+#endif // STM32CPP_HD44780_H

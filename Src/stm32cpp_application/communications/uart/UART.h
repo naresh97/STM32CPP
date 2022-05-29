@@ -39,4 +39,4 @@ public:
   EventCallback<std::vector<uint8_t>> GetMessageEventCallback();
 };
 
-#endif // STM32CP_UART_H
+#endif // STM32CPP_UART_H

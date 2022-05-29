@@ -22,4 +22,4 @@ public:
 
 } // namespace exceptions::i2c
 
-#endif // STM32CP_EXCEPTIONS_H
+#endif // STM32CPP_EXCEPTIONS_H

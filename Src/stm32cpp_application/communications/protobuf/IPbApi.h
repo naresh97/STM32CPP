@@ -24,4 +24,4 @@ public:
   };
 };
 
-#endif // STM32CP_IPBAPI_H
+#endif // STM32CPP_IPBAPI_H
