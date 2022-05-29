@@ -6,10 +6,10 @@
 #define STM32CPP_UART_H
 
 #include "../../application/callbacks/EventCallback.h"
-#include "HAL.h"
 
 #include <deque>
 #include <functional>
+#include <HAL.h>
 #include <vector>
 
 static const int uartReceiveBufferSize = 128;

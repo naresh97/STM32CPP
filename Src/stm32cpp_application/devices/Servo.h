@@ -7,10 +7,8 @@
 
 #include "../math/Rescaler.h"
 
+#include <HAL.h>
 #include <tuple>
-extern "C" {
-#include "stm32f4xx_hal.h"
-}
 
 class Servo {
   TIM_HandleTypeDef TimerHandle;

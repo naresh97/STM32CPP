@@ -5,8 +5,7 @@
 #ifndef STM32CPP_LOGGER_H
 #define STM32CPP_LOGGER_H
 
-#include "HAL.h"
-
+#include <HAL.h>
 #include <string>
 
 class Logger {

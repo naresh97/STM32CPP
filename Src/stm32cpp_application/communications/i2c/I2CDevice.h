@@ -5,12 +5,9 @@
 #ifndef STM32CPP_I2CDEVICE_H
 #define STM32CPP_I2CDEVICE_H
 
-extern "C" {
-#include "stm32f4xx_hal.h"
-};
-
 #include <cstdint>
 #include <exception>
+#include <HAL.h>
 #include <stdexcept>
 #include <string>
 #include <vector>
