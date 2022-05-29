@@ -5,6 +5,7 @@
 #ifndef STM32CPP_SRC_APPLICATION_I2C_DEVICES_MPU6050_H
 #define STM32CPP_SRC_APPLICATION_I2C_DEVICES_MPU6050_H
 
+#include "../communications/i2c/I2CDevice.h"
 static const int WhoamiRegister = 0x75;
 static const int WhoamiResponse = 0x72;
 static const int PowerOnRegister = 0x6b;
@@ -17,7 +18,6 @@ static const double GyroConversionFactor = 131.0;
 static const int TempReadRegister = 0x41;
 static const int TempReadLength = 2;
 
-#include "../I2CDevice.h"
 class MPU6050 : public I2CDevice {
 public:
   struct axes {

@@ -5,12 +5,11 @@
 #ifndef STM32CPP_HD44780_H
 #define STM32CPP_HD44780_H
 
+#include "../communications/i2c/I2CDevice.h"
 static const int Initialize8BitData = 0b00110000;
 static const int Initialize4BitData = 0b00100000;
 static const int Configure4BitData2Lines8bitFont = 0b00101000;
 static const int EntryMode = 0b00000110;
-
-#include "../I2CDevice.h"
 
 /**
  * Interacts with the HD44780 LCD device

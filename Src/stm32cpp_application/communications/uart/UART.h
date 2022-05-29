@@ -5,7 +5,7 @@
 #ifndef STM32CPP_UART_H
 #define STM32CPP_UART_H
 
-#include "callbacks/EventCallback.h"
+#include "../../application/callbacks/EventCallback.h"
 #include "HAL.h"
 
 #include <deque>

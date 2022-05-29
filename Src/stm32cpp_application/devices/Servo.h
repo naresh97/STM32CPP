@@ -5,7 +5,7 @@
 #ifndef STM32CPP_SERVO_H
 #define STM32CPP_SERVO_H
 
-#include "math/Rescaler.h"
+#include "../math/Rescaler.h"
 
 #include <tuple>
 extern "C" {

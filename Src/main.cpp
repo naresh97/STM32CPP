@@ -19,7 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-#include "Application/Application.h"
+#include "stm32cpp_application/application/Application.h"
 
 #include <memory>
 

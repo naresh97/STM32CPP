@@ -4,8 +4,8 @@
 
 #include "Application.h"
 
-#include "communications/protobuf/hd44780_lcd/Hd44780PbApi.h"
-#include "i2c/devices/HD44780.h"
+#include "../communications/protobuf/hd44780_lcd/Hd44780PbApi.h"
+#include "../devices/HD44780.h"
 
 #include <cmath>
 #include <sstream>

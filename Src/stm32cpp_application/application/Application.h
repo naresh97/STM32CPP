@@ -5,11 +5,11 @@
 #ifndef STM32CPP_APPLICATION_H
 #define STM32CPP_APPLICATION_H
 
+#include "../communications/uart/UART.h"
+#include "../devices/HD44780.h"
+#include "../devices/MPU6050.h"
+#include "../devices/Servo.h"
 #include "ApplicationInterface.h"
-#include "communications/UART.h"
-#include "i2c/devices/HD44780.h"
-#include "i2c/devices/MPU6050.h"
-#include "Servo.h"
 
 #include <list>
 

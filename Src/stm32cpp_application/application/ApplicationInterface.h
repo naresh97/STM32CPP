@@ -5,7 +5,7 @@
 #ifndef STM32CPP_APPLICATIONINTERFACE_H
 #define STM32CPP_APPLICATIONINTERFACE_H
 
-#include "Logger.h"
+#include "../logging/Logger.h"
 
 #include <optional>
 

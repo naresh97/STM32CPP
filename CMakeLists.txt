@@ -56,7 +56,7 @@ add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx)
 file(GLOB_RECURSE SOURCES "Startup/*.*" "Src/*.*" "Drivers/*.*")
 file(GLOB NANOPB_SOURCES "External/nanopb/*.c")
 
-file(GLOB_RECURSE PROTOBUF_SRC "Src/Application/communications/protobuf/*.proto")
+file(GLOB_RECURSE PROTOBUF_SRC "Src/stm32cpp_application/communications/protobuf/*.proto")
 foreach (PROTOBUF_FILE ${PROTOBUF_SRC})
     get_filename_component(PROTOBUF_FILE_PARENT ${PROTOBUF_FILE} DIRECTORY)
     execute_process(COMMAND python3 ${PROJECT_SOURCE_DIR}/External/nanopb/generator/nanopb_generator.py ${PROTOBUF_FILE} -I ${PROTOBUF_FILE_PARENT} WORKING_DIRECTORY ${PROTOBUF_FILE_PARENT})

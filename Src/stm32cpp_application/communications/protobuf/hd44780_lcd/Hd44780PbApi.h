@@ -2,7 +2,7 @@
 // Created by naresh on 29/05/22.
 //
 
-#include "../../../i2c/devices/HD44780.h"
+#include "../../../devices/HD44780.h"
 #include "../IPbApi.h"
 #include "hd44780_lcd.pb.h"
 #include "pb_decode.h"

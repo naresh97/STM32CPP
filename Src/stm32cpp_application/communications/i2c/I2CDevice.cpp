@@ -4,7 +4,7 @@
 
 #include "I2CDevice.h"
 
-#include "../exceptions.h"
+#include "../../application/exceptions.h"
 
 I2CDevice::I2CDevice(I2C_HandleTypeDef i2CHandle, uint8_t address)
     : I2CHandle(i2CHandle), Address(address) {}
