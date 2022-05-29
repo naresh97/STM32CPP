@@ -3,72 +3,68 @@
 
 #ifndef PB_MPU6050_PB_H_INCLUDED
 #define PB_MPU6050_PB_H_INCLUDED
-#include "pb.h"
+#include <pb.h>
 
 #if PB_PROTO_HEADER_VERSION != 40
 #error Regenerate this file with the current version of nanopb generator.
 #endif
 
 /* Struct definitions */
-typedef struct _AccelData {
-  double x;
-  double y;
-  double z;
+typedef struct _AccelData { 
+    double x;
+    double y;
+    double z;
 } AccelData;
 
-typedef struct _GyroData {
-  double x;
-  double y;
-  double z;
+typedef struct _GyroData { 
+    double x;
+    double y;
+    double z;
 } GyroData;
 
-typedef struct _Temperature {
-  double T;
+typedef struct _Temperature { 
+    double T;
 } Temperature;
+
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /* Initializer values for message structs */
-#define AccelData_init_default                                                 \
-  { 0, 0, 0 }
-#define GyroData_init_default                                                  \
-  { 0, 0, 0 }
-#define Temperature_init_default                                               \
-  { 0 }
-#define AccelData_init_zero                                                    \
-  { 0, 0, 0 }
-#define GyroData_init_zero                                                     \
-  { 0, 0, 0 }
-#define Temperature_init_zero                                                  \
-  { 0 }
+#define AccelData_init_default                   {0, 0, 0}
+#define GyroData_init_default                    {0, 0, 0}
+#define Temperature_init_default                 {0}
+#define AccelData_init_zero                      {0, 0, 0}
+#define GyroData_init_zero                       {0, 0, 0}
+#define Temperature_init_zero                    {0}
 
 /* Field tags (for use in manual encoding/decoding) */
-#define AccelData_x_tag 1
-#define AccelData_y_tag 2
-#define AccelData_z_tag 3
-#define GyroData_x_tag 1
-#define GyroData_y_tag 2
-#define GyroData_z_tag 3
-#define Temperature_T_tag 1
+#define AccelData_x_tag                          1
+#define AccelData_y_tag                          2
+#define AccelData_z_tag                          3
+#define GyroData_x_tag                           1
+#define GyroData_y_tag                           2
+#define GyroData_z_tag                           3
+#define Temperature_T_tag                        1
 
 /* Struct field encoding specification for nanopb */
-#define AccelData_FIELDLIST(X, a)                                              \
-  X(a, STATIC, SINGULAR, DOUBLE, x, 1)                                         \
-  X(a, STATIC, SINGULAR, DOUBLE, y, 2)                                         \
-  X(a, STATIC, SINGULAR, DOUBLE, z, 3)
+#define AccelData_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, DOUBLE,   x,                 1) \
+X(a, STATIC,   SINGULAR, DOUBLE,   y,                 2) \
+X(a, STATIC,   SINGULAR, DOUBLE,   z,                 3)
 #define AccelData_CALLBACK NULL
 #define AccelData_DEFAULT NULL
 
-#define GyroData_FIELDLIST(X, a)                                               \
-  X(a, STATIC, SINGULAR, DOUBLE, x, 1)                                         \
-  X(a, STATIC, SINGULAR, DOUBLE, y, 2)                                         \
-  X(a, STATIC, SINGULAR, DOUBLE, z, 3)
+#define GyroData_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, DOUBLE,   x,                 1) \
+X(a, STATIC,   SINGULAR, DOUBLE,   y,                 2) \
+X(a, STATIC,   SINGULAR, DOUBLE,   z,                 3)
 #define GyroData_CALLBACK NULL
 #define GyroData_DEFAULT NULL
 
-#define Temperature_FIELDLIST(X, a) X(a, STATIC, SINGULAR, DOUBLE, T, 1)
+#define Temperature_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, DOUBLE,   T,                 1)
 #define Temperature_CALLBACK NULL
 #define Temperature_DEFAULT NULL
 
@@ -82,9 +78,9 @@ extern const pb_msgdesc_t Temperature_msg;
 #define Temperature_fields &Temperature_msg
 
 /* Maximum encoded size of messages (where known) */
-#define AccelData_size 27
-#define GyroData_size 27
-#define Temperature_size 9
+#define AccelData_size                           27
+#define GyroData_size                            27
+#define Temperature_size                         9
 
 #ifdef __cplusplus
 } /* extern "C" */
