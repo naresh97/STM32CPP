@@ -12,8 +12,6 @@
 #ifndef STM32CPP_HD44780_PBAPI_H
 #define STM32CPP_HD44780_PBAPI_H
 
-#endif // STM32CP_HD44780_PBAPI_H
-
 class Hd44780PbApi : IPbApi {
 public:
   static void ParseMessage(std::vector<uint8_t> message, HD44780 &lcd) {
@@ -55,3 +53,5 @@ public:
     }
   }
 };
+
+#endif // STM32CP_HD44780_PBAPI_H
