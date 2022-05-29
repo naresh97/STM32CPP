@@ -43,3 +43,14 @@ void I2CDevice::Write(uint8_t registerAddress, std::vector<uint8_t> data) {
   if (status != HAL_OK)
     throw std::runtime_error("Could not Write to register.");
 }
+std::vector<uint8_t> I2CDevice::ScanForDevices() {
+  auto devices = std::vector<uint8_t>();
+  for (int i = 0x00; i < 0xff; ++i) {
+    auto statusReady =
+        HAL_I2C_IsDeviceReady(&I2CHandle, i << 1, 5, HAL_MAX_DELAY);
+
+    if (statusReady == HAL_OK)
+      devices.push_back(i);
+  }
+  return devices;
+}

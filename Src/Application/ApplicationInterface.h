@@ -16,9 +16,8 @@ protected:
   static void Delay(int milliseconds = 1000);
 
 public:
-  ApplicationInterface(UART_HandleTypeDef uartHandle);
+  explicit ApplicationInterface(UART_HandleTypeDef uartHandle);
   virtual void ApplicationLoop() = 0;
-  virtual void ApplicationSetup() = 0;
   Logger GetLogger() { return ApplicationLogger; }
 };
 

@@ -16,9 +16,12 @@ extern "C" {
 #include <vector>
 
 class I2CDevice {
-  uint8_t Address;
-  I2C_HandleTypeDef I2CHandle;
   int I2CTimeout = HAL_MAX_DELAY;
+
+protected:
+  I2C_HandleTypeDef I2CHandle;
+
+  uint8_t Address;
 
 public:
   explicit I2CDevice(I2C_HandleTypeDef i2CHandle, uint8_t address);
@@ -26,6 +29,7 @@ public:
   virtual std::vector<uint8_t> Read(uint8_t registerAddress,
                                     int readBytesLength);
   virtual void Write(uint8_t registerAddress, std::vector<uint8_t> data);
+  virtual std::vector<uint8_t> ScanForDevices();
 };
 
 #endif // HELLONUCLEO_I2CDEVICE_H

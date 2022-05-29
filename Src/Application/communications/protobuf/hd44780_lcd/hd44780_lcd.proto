@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+message ApiRequest{
+  enum Method{
+    MoveCursor = 0;
+    WriteText = 1;
+    ConfigureDisplay = 2;
+    ShiftDisplay = 3;
+    ClearDisplay = 4;
+  }
+  Method method = 1;
+  bytes parameters = 2;
+}
+
+message MoveCursor{
+  int32 row = 1;
+  int32 column = 2;
+}
+
+message WriteText{
+  string characters = 1;
+}
+
+message ConfigureDisplay{
+  bool DisplayOn = 1;
+  bool ShowCursor = 2;
+  bool BlinkCursor = 3;
+}
+
+message ShiftDisplay{
+  enum Direction{
+    Left = 0;
+    Right = 1;
+  }
+  Direction direction = 1;
+  int32 steps = 2;
+}

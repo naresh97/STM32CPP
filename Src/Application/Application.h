@@ -6,6 +6,8 @@
 #define HELLONUCLEO_APPLICATION_H
 
 #include "ApplicationInterface.h"
+#include "communications/UART.h"
+#include "i2c/devices/HD44780.h"
 #include "i2c/devices/MPU6050.h"
 #include "Servo.h"
 
@@ -14,15 +16,16 @@
 class Application : public ApplicationInterface {
   MPU6050 Gyro;
   Servo Servo1;
-  std::list<long> angleBuffer = std::list<long>(20);
+  HD44780 Lcd1;
+  EventCallback<std::vector<uint8_t>> UartMessageCallback;
 
 public:
-  explicit Application(UART_HandleTypeDef uartHandle,
-                       I2C_HandleTypeDef i2CHandle,
-                       TIM_HandleTypeDef timerHandle);
+  UART UartComm;
+  explicit Application(UART_HandleTypeDef &uartHandle,
+                       I2C_HandleTypeDef &i2CHandle,
+                       TIM_HandleTypeDef &timerHandle);
 
   void ApplicationLoop() override;
-  void ApplicationSetup() override;
 };
 
 #endif // HELLONUCLEO_APPLICATION_H

@@ -4,47 +4,43 @@
 
 #include "Application.h"
 
-#include "communications/protobuf/mpu6050.pb.h"
-#include "pb_encode.h"
+#include "communications/protobuf/hd44780_lcd/Hd44780PbApi.h"
+#include "i2c/devices/HD44780.h"
 
-#include <algorithm>
-#include <numeric>
+#include <cmath>
 #include <sstream>
+#include <utility>
 void Application::ApplicationLoop() {
   auto accel = Gyro.ReadAcceleration();
   auto [x, y, z] = accel;
 
-  auto rescaler = Math::Rescaler<double>({-1, 1}, {180, 0});
+  auto rescaler = Math::Rescaler<double>({-1, 1}, {0, 180});
 
   auto angle = rescaler(y);
 
-  angleBuffer.pop_front();
-  angleBuffer.push_back(angle);
-  auto avg =
-      std::reduce(angleBuffer.begin(), angleBuffer.end()) / angleBuffer.size();
+  //  lcd1.ClearDisplay();
+  std::stringstream ss;
+  ss << "angle: " << static_cast<int>(std::lround(angle));
+  Lcd1.MoveCursor(0, 0);
+  Lcd1.WriteText(ss.str());
+  HAL_Delay(200);
 
   Servo1.GoToAngle(static_cast<int>(angle));
-
-  AccelData testMessage{.x = x, .y = y, .z = z};
-  uint8_t buffer[128];
-  auto stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
-  pb_encode(&stream, AccelData_fields, &testMessage);
-
-  ApplicationLogger.SendBytes(buffer, stream.bytes_written);
+  UartComm.ProcessingLoop();
 }
 
-void Application::ApplicationSetup() {}
-
-Application::Application(UART_HandleTypeDef uartHandle,
-                         I2C_HandleTypeDef i2CHandle,
-                         TIM_HandleTypeDef timerHandle)
+Application::Application(UART_HandleTypeDef &uartHandle,
+                         I2C_HandleTypeDef &i2CHandle,
+                         TIM_HandleTypeDef &timerHandle)
     : ApplicationInterface(uartHandle), Gyro(i2CHandle, (0x68 << 1)),
-      Servo1(timerHandle, {60, 253}, {0, 180}) {
-  //  ApplicationLogger.Info("Application setup initiated.");
+      Servo1(timerHandle, {60, 253}, {0, 180}), Lcd1(i2CHandle, 0x3f << 1),
+      UartComm(uartHandle) {
 
-  try {
-    Gyro.Initialize();
-  } catch (std::runtime_error &e) {
-    ApplicationLogger.Error(e.what());
-  }
+  Gyro.Initialize();
+
+  UartComm.InitializeReceive();
+  UartMessageCallback = UartComm.GetMessageEventCallback();
+  UartMessageCallback.Subscribe([&](std::vector<uint8_t> message) {
+    Hd44780PbApi::ParseMessage(std::move(message), Lcd1);
+  });
 }

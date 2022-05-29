@@ -5,9 +5,7 @@
 #ifndef HELLONUCLEO_LOGGER_H
 #define HELLONUCLEO_LOGGER_H
 
-extern "C" {
-#include "stm32f4xx_hal.h"
-};
+#include "HAL.h"
 
 #include <string>
 
@@ -22,7 +20,7 @@ public:
   void Info(const std::string &message) { Log(message, "[INFO] "); }
   void Error(const std::string &message) { Log(message, "[ERROR] "); }
 
-  void SendBytes(uint8_t *bytes, const size_t length);
+  void SendBytes(uint8_t *bytes, size_t length);
 
   void Clear();
 };
